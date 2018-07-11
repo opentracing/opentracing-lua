@@ -42,7 +42,7 @@ end
 --
 -- @return a @class `Span` instance
 function tracer_methods:start_span(operation_name, options)
-  opentracing_span.new()
+  return opentracing_span.new()
 end
 
 --- Injects `span_context` into `carrier`.
