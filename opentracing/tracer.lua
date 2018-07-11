@@ -1,3 +1,5 @@
+local opentracing_span = require "opentracing.span"
+
 local tracer_methods = {}
 local tracer_mt = {
 	__name = "opentracing.tracer";
@@ -34,6 +36,7 @@ end
 --
 -- @return a @class `Span` instance
 function tracer_methods:start_span(operation_name, options)
+  opentracing_span.new()
 end
 
 --- Injects `span_context` into `carrier`.

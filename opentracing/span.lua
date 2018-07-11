@@ -40,7 +40,34 @@ end
 --
 -- @param key_values a table of string keys and values of string, bool, or
 --      numeric types
-function log_kv(key_values)
+function span_methods:log_kv(key_values)
+end
+
+--- Stores a Baggage item in the @class `Span` as a key/value pair.
+--
+-- Enables powerful distributed context propagation functionality where
+-- arbitrary application data can be carried along the full path of request 
+-- execution throughout the system.
+--
+-- Note 1: Baggage is only propagated to the future (recursive) children of this
+-- @class `Span`.
+--
+-- Note 2: Baggage is sent in-band with every subsequent local and remote calls,
+-- so this feature must be used with care.
+--
+-- @param key Baggage item key
+--
+-- @param value Baggage item value
+function span_methods:set_baggage_item(key, value)
+end
+
+--- Retrieves value of the baggage item with the given key.
+--
+-- @param key key of the baggage item
+--
+-- @return value of the baggage item with given key or `nil`
+function span_methods:get_baggage_item(key)
+  return nil
 end
 
 return {
