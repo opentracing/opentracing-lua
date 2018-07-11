@@ -1,3 +1,11 @@
+-- Span represents a unit of work executed on behalf of a trace. Examples of
+-- spans include a remote procedure call, or a in-process method call to a
+-- sub-component. Every span in a trace may have zero or more causal parents,
+-- and these relationships transitively form a DAG. It is common for spans to
+-- have at most one parent, and thus most traces are merely tree structures.
+
+local opentracing_span_context = require 'opentracing.span_context'
+
 local span_methods = {}
 local span_mt = {
 	__name = "opentracing.span";
@@ -7,6 +15,17 @@ local span_mt = {
 local function new()
   return setmetatable({
   }, span_mt)
+end
+
+--- Provides access to the @class `SpanContext` associated with this @class
+-- `Span`.
+--
+-- The @class `SpanContext` contains state that propagates from @class `Span`
+-- to @class `Span` in a larger tracer.
+--
+-- @return the @class `SpanContext` associated with this @class `Span`
+function span_methods:context()
+  return opentracing_span_context.new()
 end
 
 --- Indicates the work represented by this @class `Span` has completed or 

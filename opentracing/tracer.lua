@@ -1,3 +1,9 @@
+-- Tracer is the entry point API between instrumentation code and the
+-- tracing implementation.
+-- 
+-- This implementation both defines the public Tracer API, and provides
+-- a default no-op behavior.
+
 local opentracing_span = require "opentracing.span"
 
 local tracer_methods = {}
