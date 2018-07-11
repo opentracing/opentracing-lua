@@ -113,7 +113,7 @@ end
 -- @param carrier a binary storing an injected @class `SpanContext`
 --
 -- @return an extracted @class `SpanContext` or `nil`
-function tracer_metnods:binary_extract(carrier)
+function tracer_methods:binary_extract(carrier)
   return nil
 end
 
