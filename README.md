@@ -54,7 +54,7 @@ reference.
     tracer:http_headers_inject(span:context(), carrier)
 ```
 
-#### Extract Span context from a TextMapReader
+#### Extract Span context from a table
 
 ```lua
     tracer = --[[ Some Tracer ]]
