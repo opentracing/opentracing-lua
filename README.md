@@ -70,4 +70,4 @@ backwards compatibility will become more of a priority.
 
 ## License
 
-By contributing to opentracing.cpp, you agree that your contributions will be licensed under its [Apache 2.0 License](./LICENSE).
+By contributing to opentracing.lua, you agree that your contributions will be licensed under its [Apache 2.0 License](./LICENSE).
