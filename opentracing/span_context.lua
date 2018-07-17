@@ -10,8 +10,8 @@
 
 local span_context_methods = {}
 local span_context_mt = {
-	__name = "opentracing.span_context";
-	__index = span_context_methods;
+  __name = "opentracing.span_context";
+  __index = span_context_methods;
 }
 
 local function new()

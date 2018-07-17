@@ -8,13 +8,13 @@ local opentracing_span = require "opentracing.span"
 
 local tracer_methods = {}
 local tracer_mt = {
-	__name = "opentracing.tracer";
-	__index = tracer_methods;
+  __name = "opentracing.tracer";
+  __index = tracer_methods;
 }
 
 local function new()
-	return setmetatable({
-	}, tracer_mt)
+  return setmetatable({
+  }, tracer_mt)
 end
 
 --- Starts and returns a new @class `Span` representing a unit of work.
@@ -118,5 +118,5 @@ function tracer_methods:binary_extract(carrier)
 end
 
 return {
-	new = new;
+  new = new;
 }

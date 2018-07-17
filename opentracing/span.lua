@@ -8,8 +8,8 @@ local opentracing_span_context = require 'opentracing.span_context'
 
 local span_methods = {}
 local span_mt = {
-	__name = "opentracing.span";
-	__index = span_methods;
+  __name = "opentracing.span";
+  __index = span_methods;
 }
 
 local function new()
