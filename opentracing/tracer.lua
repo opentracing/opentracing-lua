@@ -118,5 +118,5 @@ function tracer_methods:binary_extract(carrier)
 end
 
 return {
-	new = new
+	new = new;
 }

@@ -20,5 +20,5 @@ local function new()
 end
 
 return {
-  new = new
+  new = new;
 }

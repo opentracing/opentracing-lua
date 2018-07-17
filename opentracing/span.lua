@@ -90,5 +90,5 @@ function span_methods:get_baggage_item(key)
 end
 
 return {
-  new = new
+  new = new;
 }
