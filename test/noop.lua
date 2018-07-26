@@ -2,7 +2,7 @@ local tracer = require 'opentracing.tracer'
 
 describe("in tracer", function()
   it("supports the construction of a noop tracer", function()
-    local t = opentracing:new()
+    local t = tracer:new()
     local span = t:start_span("abc")
     local context = span:context()
     local t2 = span:tracer()
