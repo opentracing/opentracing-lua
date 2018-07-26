@@ -9,7 +9,7 @@ describe("in tracer", function()
     span:set_tag("abc", 123)
     span:log_kv({
         ["event"] = "time to first byte",
-        ["packet.size"] = packet:size()})
+        ["packet.size"] = 100})
     span:set_baggage_item("abc", "123")
     span:get_baggage_item("abc")
     span:finish()
