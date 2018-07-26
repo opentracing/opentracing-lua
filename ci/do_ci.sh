@@ -6,7 +6,7 @@ function run_lua_test()
 {
   ./ci/install_lua.sh
   ./ci/install_rocks.sh
-  luarocks install opentracing-scm-0.rockspec
+  luarocks make opentracing-scm-0.rockspec
   busted test/noop.lua
 }
 
