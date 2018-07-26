@@ -4,8 +4,6 @@ set -e
 
 function run_lua_test()
 {
-  setup_asan_flags
-  ./ci/install_opentracing.sh
   ./ci/install_lua.sh
   ./ci/install_rocks.sh
   luarocks install opentracing-scm-0.rockspec
