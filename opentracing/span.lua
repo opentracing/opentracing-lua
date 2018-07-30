@@ -12,8 +12,9 @@ local span_mt = {
   __index = span_methods;
 }
 
-local function new()
+local function new(tracer)
   return setmetatable({
+    ["tracer_"] = tracer
   }, span_mt)
 end
 
@@ -26,6 +27,17 @@ end
 -- @return the @class `SpanContext` associated with this @class `Span`
 function span_methods:context()
   return opentracing_span_context.new()
+end
+
+-- Provides access to the @class `Tracer` that created this span.
+--
+-- @return the @class `Tracer` that created this span.
+function span_methods:tracer()
+  return self.tracer_
+end
+
+-- Changes the operation name.
+function span_methods:set_operation_name(operation_name)
 end
 
 --- Indicates the work represented by this @class `Span` has completed or 
