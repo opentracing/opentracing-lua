@@ -101,6 +101,10 @@ function span_methods:get_baggage_item(key)
   return nil
 end
 
+--- Returns an iterator over each attached baggage item
+function span_methods:each_baggage_item()
+end
+
 return {
   new = new;
 }
