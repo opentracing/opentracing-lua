@@ -71,7 +71,10 @@ end
 --
 -- @param key_values a table of string keys and values of string, bool, or
 --      numeric types
-function span_methods:log_kv(key_values)
+--
+-- @param timestamp an optional timestamp as a unix timestamp.
+--      defaults to the current time
+function span_methods:log_kv(key_values, timestamp)
 end
 
 --- Stores a Baggage item in the @class `Span` as a key/value pair.
