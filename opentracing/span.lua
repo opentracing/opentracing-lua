@@ -40,7 +40,7 @@ end
 function span_methods:set_operation_name(operation_name)
 end
 
---- Indicates the work represented by this @class `Span` has completed or 
+--- Indicates the work represented by this @class `Span` has completed or
 -- terminated.
 --
 -- If `finish` is called a second time, it is guaranteed to do nothing.
@@ -62,7 +62,7 @@ function span_methods:set_tag(key, value)
 end
 
 --- Attaches a log record to the @class `Span`.
--- 
+--
 -- For example:
 --
 --    span:log_kv({
@@ -77,7 +77,7 @@ end
 --- Stores a Baggage item in the @class `Span` as a key/value pair.
 --
 -- Enables powerful distributed context propagation functionality where
--- arbitrary application data can be carried along the full path of request 
+-- arbitrary application data can be carried along the full path of request
 -- execution throughout the system.
 --
 -- Note 1: Baggage is only propagated to the future (recursive) children of this
