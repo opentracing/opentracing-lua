@@ -1,6 +1,6 @@
 -- Tracer is the entry point API between instrumentation code and the
 -- tracing implementation.
--- 
+--
 -- This implementation both defines the public Tracer API, and provides
 -- a default no-op behavior.
 
@@ -20,21 +20,21 @@ end
 --- Starts and returns a new @class `Span` representing a unit of work.
 --
 -- Example usage:
--- 
+--
 -- Create a root @class `Span` (a @class `Span` with no causal references):
 --
 --      tracer:start_span("op-name")
 --
 -- Create a child @class `Span`:
---  
+--
 --      tracer:start_span(
---              "op-name", 
+--              "op-name",
 --              {["references"] = {{"child_of", parent_span:context()}}})
 --
 -- @param operation_name name of the operation represented by the new
 --    @class `Span` from the perspective of the current service.
 --
--- @param options (optional) table specifying modifications to make to the 
+-- @param options (optional) table specifying modifications to make to the
 --    newly created span. The following parameters are supported: `references`,
 --    a list of referenced spans; `start_time`, the time to mark when the span
 --    begins (in microseconds since epoch); `tags`, a table of tags to add to
@@ -46,7 +46,7 @@ function tracer_methods:start_span(operation_name, options)
 end
 
 --- Injects `span_context` into `carrier`.
--- 
+--
 -- Example usage:
 --
 --    carrier = {}
@@ -60,7 +60,7 @@ end
 
 --- Injects `span_context` into `carrier` using a format appropriate for HTTP
 -- headers.
--- 
+--
 -- Example usage:
 --
 --    carrier = {}

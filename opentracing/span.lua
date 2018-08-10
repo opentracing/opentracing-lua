@@ -40,7 +40,7 @@ end
 function span_methods:set_operation_name(operation_name)
 end
 
---- Indicates the work represented by this @class `Span` has completed or 
+--- Indicates the work represented by this @class `Span` has completed or
 -- terminated.
 --
 -- If `finish` is called a second time, it is guaranteed to do nothing.
@@ -62,7 +62,7 @@ function span_methods:set_tag(key, value)
 end
 
 --- Attaches a log record to the @class `Span`.
--- 
+--
 -- For example:
 --
 --    span:log_kv({
@@ -71,13 +71,16 @@ end
 --
 -- @param key_values a table of string keys and values of string, bool, or
 --      numeric types
-function span_methods:log_kv(key_values)
+--
+-- @param timestamp an optional timestamp as a unix timestamp.
+--      defaults to the current time
+function span_methods:log_kv(key_values, timestamp)
 end
 
 --- Stores a Baggage item in the @class `Span` as a key/value pair.
 --
 -- Enables powerful distributed context propagation functionality where
--- arbitrary application data can be carried along the full path of request 
+-- arbitrary application data can be carried along the full path of request
 -- execution throughout the system.
 --
 -- Note 1: Baggage is only propagated to the future (recursive) children of this
@@ -99,6 +102,10 @@ end
 -- @return value of the baggage item with given key or `nil`
 function span_methods:get_baggage_item(key)
   return nil
+end
+
+--- Returns an iterator over each attached baggage item
+function span_methods:each_baggage_item()
 end
 
 return {

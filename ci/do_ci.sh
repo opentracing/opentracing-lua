@@ -7,7 +7,7 @@ function run_lua_test()
   ./ci/install_lua.sh
   ./ci/install_rocks.sh
   luarocks make opentracing-scm-0.rockspec
-  busted test/noop.lua
+  busted
 }
 
 if [[ "$1" == "test-5.3" ]]; then
